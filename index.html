@@ -17,12 +17,12 @@ main{max-width:1240px;margin:0 auto;padding:14px}html[data-fw="1"] main{max-widt
 .bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}.bar select,.bar input,input,select{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:6px 8px;font:inherit}
 .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}.kpi{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px}
 .kpi small{color:var(--mu)}.kpi b{display:block;font-size:19px;margin:2px 0}.up{color:var(--g)}.dn{color:var(--r)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}.grid .card{margin:0}canvas{max-height:260px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:14px}.grid .card{margin:0}canvas{max-height:260px}
 .tw{overflow-x:auto}.sk{position:sticky;z-index:2;background:var(--card)}th.sk{z-index:3}.sk2{box-shadow:2px 0 0 var(--bd)}table{border-collapse:collapse;width:100%;white-space:nowrap}th,td{padding:6px 9px;border-bottom:1px solid var(--bd);text-align:left}th{cursor:pointer;color:var(--mu);font-weight:600;font-size:12px}td.n,th.n{text-align:right}
 .bg{padding:2px 8px;border-radius:99px;font-size:11px;font-weight:700;color:#fff}.WINNER,.SCALE{background:var(--g)}.MONITOR,.MAINTAIN,.OPTIMIZE{background:var(--o)}.LOSER,.STOP{background:var(--r)}.INSUFFICIENT,.NOADS,.TUNGGU{background:#94a3b8}
 ul.i{margin:0;padding-left:18px}ul.i li{margin:4px 0}.mu{color:var(--mu)}.sec{display:none}.sec.on{display:block}
 .pg{display:flex;gap:8px;align-items:center;margin-top:8px}.drop{border:2px dashed var(--bd);border-radius:12px;padding:22px;text-align:center}
-.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}.f label{display:block;font-size:12px;color:var(--mu)}
+.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px}.f label{display:block;font-size:12px;color:var(--mu)}
 
 /* ===== tampilan SaaS: sidebar + topbar ===== */
 :root{--bg:#f5f6fa;--card:#fff;--tx:#0f172a;--mu:#64748b;--bd:#e6e9f0;--pr:#2563eb;--prs:#eaf1ff;--hv:#f4f6fb;--sh:0 1px 2px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.05);--g:#12a15c;--r:#e5484d;--o:#e8890c}
@@ -83,6 +83,30 @@ h3{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--mu)}
 .sb{position:fixed;left:0;top:0;transform:translateX(-100%);transition:transform .25s;box-shadow:0 0 40px rgba(0,0,0,.25)}
 body.nv .sb{transform:none}body.nv .scrim{display:block;position:fixed;inset:0;background:rgba(15,23,42,.45);z-index:15}
 #mb{display:grid}header.top{padding:10px 14px}header.top input#q{min-width:0;flex:1}header.top h2{display:none}main{padding:14px}}
+
+/* ===== perbaikan mobile ===== */
+@media(max-width:900px){
+.sb{width:min(82vw,290px)}
+header.top{flex-wrap:wrap;gap:8px;padding:10px 12px}
+header.top h2{display:block;flex:1;font-size:17px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+header.top input#q{order:5;flex:1 1 100%;width:100%;min-width:0}
+}
+@media(max-width:600px){
+main{padding:12px 12px 28px}
+input,select,textarea{font-size:16px}
+.bar{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
+.bar>*{min-width:0;width:100%}.bar>span.mu,.bar>select#fp:only-child{grid-column:1/-1}
+.bar>span.mu{font-size:12.5px;text-align:center}
+.kpis{grid-template-columns:1fr 1fr;gap:10px}
+.kpi{padding:12px 13px}.kpi small{font-size:11.5px}.kpi b{font-size:17px;margin:6px 0 5px;overflow:hidden;text-overflow:ellipsis}
+.kpi b[style]{white-space:normal;font-size:14px!important}
+.card{padding:14px;border-radius:14px;margin-bottom:12px}
+.grid{gap:12px}canvas{max-height:220px}
+table{font-size:12px}th{padding:9px 9px}td{padding:8px 9px}
+.btn{padding:8px 12px}.btn.s{padding:5px 10px}
+.drop{padding:16px}
+.pg{justify-content:space-between}
+}
 </style></head><body>
 <div class="app"><aside class="sb"><div class="brand"><div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div><div><b>Affiliate Analytics</b><span>Shopee × Meta Ads</span></div></div><nav id="nav"></nav><div class="sbf"><span id="svb" style="color:var(--mu)"></span></div></aside><div class="scrim" id="scrim"></div>
 <div class="mn"><header class="top"><button class="ib" id="mb" title="Sembunyikan / tampilkan menu">☰</button><h2 id="pt">Dashboard</h2><input id="q" placeholder="Cari iklan / tag / produk…"><button class="ib" id="th" title="Ganti tema">🌓</button><button class="ib" id="fw" title="Lebar penuh / standar">↔</button></header>
