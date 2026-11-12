@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Masuk | Affiliate Analytics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b5bf0'/%3E%3Cpath d='M7 21l6-6 4 4 8-8' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fc;--tx:#14173a;--mu:#5d6388;--bd:#cfd4ea;--in:#fff;--pr:#4f4fe8;--prh:#4141d6;--pt:#fff;--er:#c62a3a;--ring:rgba(79,79,232,.28);box-sizing:border-box}
+@media(prefers-color-scheme:dark){:root{--bg:#0d0f1f;--tx:#e8eaf8;--mu:#9aa0c4;--bd:#2c3253;--in:#151934;--pr:#7b7bff;--prh:#9393ff;--pt:#0d0f1f;--er:#ff8591;--ring:rgba(123,123,255,.35)}}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.5 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);min-height:100dvh}
+.panel{background:#0b1f4d;color:#fff;padding:clamp(24px,4vw,48px);padding-top:max(clamp(24px,4vw,48px),env(safe-area-inset-top));display:flex;flex-direction:column;gap:28px;justify-content:space-between;overflow:hidden}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600}
+.logo{width:34px;height:34px;border-radius:9px;background:#5b5bf0;display:grid;place-items:center}
+.panel h1{font-size:clamp(24px,3vw,38px);line-height:1.18;font-weight:700;letter-spacing:-.01em;margin:0;max-width:16em}
+.panel svg.chart{width:100%;height:auto;display:block}
+.g{stroke:rgba(255,255,255,.1);stroke-width:1}
+.ln{fill:none;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.6s cubic-bezier(.3,.6,.2,1) .2s forwards}
+.ln.b{animation-delay:.5s}
+.gap{fill:rgba(110,231,183,.16);opacity:0;animation:fade .8s ease 1.6s forwards}
+.lb{font-size:13px;font-weight:600;opacity:0;animation:fade .6s ease 1.7s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fade{to{opacity:1}}
+main{display:flex;align-items:center;padding:32px 24px;padding-bottom:max(32px,env(safe-area-inset-bottom))}
+.wrap{width:min(380px,100%);margin:0 auto}
+h2{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.01em}
+.sub{margin:0 0 28px;color:var(--mu)}
+label{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+.f{position:relative;margin-bottom:18px}
+input[type=text],input[type=password]{width:100%;height:48px;border:1px solid var(--bd);background:var(--in);color:var(--tx);border-radius:10px;padding:0 14px;font:inherit;transition:border-color .15s,box-shadow .15s}
+input[type=password]{padding-right:96px}
+input:focus{outline:none;border-color:var(--pr);box-shadow:0 0 0 4px var(--ring)}
+.tg{position:absolute;right:6px;bottom:6px;height:36px;padding:0 12px;border:0;background:transparent;color:var(--pr);font:inherit;font-size:14px;font-weight:600;border-radius:8px;cursor:pointer}
+.tg:focus-visible,.btn:focus-visible,.rm input:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+.rm{display:flex;align-items:center;gap:10px;margin:4px 0 22px;color:var(--mu);font-size:14px;cursor:pointer}
+.rm input{width:18px;height:18px;accent-color:var(--pr);margin:0}
+.btn{width:100%;height:50px;border:0;border-radius:10px;background:var(--pr);color:var(--pt);font:inherit;font-weight:700;cursor:pointer;transition:background .15s}
+.btn:hover{background:var(--prh)}.btn:disabled{opacity:.7;cursor:progress}
+.msg{min-height:22px;margin:0 0 14px;font-size:14px;color:var(--er);font-weight:500}
+.caps{color:var(--mu);font-size:13px;margin:6px 0 0;display:none}
+.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@media(max-width:860px){body{grid-template-columns:1fr;grid-template-rows:auto 1fr}.panel{gap:14px;padding-bottom:24px}.panel svg.chart{display:none}.panel h1{font-size:21px}main{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.ln,.gap,.lb{animation:none;stroke-dashoffset:0;opacity:1}.shake{animation:none}}
+</style>
+</head>
+<body>
+<section class="panel">
+  <div class="brand"><span class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>Affiliate Analytics</div>
+  <h1>Komisi Shopee dan biaya Meta Ads, dalam satu layar.</h1>
+  <svg class="chart" viewBox="0 0 640 280" role="img" aria-label="Grafik ilustrasi: garis komisi naik menjauhi garis biaya iklan">
+    <line class="g" x1="0" y1="60" x2="520" y2="60"/><line class="g" x1="0" y1="130" x2="520" y2="130"/><line class="g" x1="0" y1="200" x2="520" y2="200"/><line class="g" x1="0" y1="270" x2="520" y2="270"/>
+    <path class="gap" d="M0 230L65 215L130 222L195 190L260 170L325 176L390 130L455 110L520 80L520 170L455 184L390 190L325 212L260 208L195 215L130 232L65 228L0 235Z"/>
+    <path class="ln" pathLength="1" stroke="#4f8cff" class="b" d="M0 235L65 228L130 232L195 215L260 208L325 212L390 190L455 184L520 170" style="animation-delay:.5s"/>
+    <path class="ln" pathLength="1" stroke="#ff7a4d" d="M0 230L65 215L130 222L195 190L260 170L325 176L390 130L455 110L520 80"/>
+    <text class="lb" x="532" y="84" fill="#ff9a78">Komisi</text>
+    <text class="lb" x="532" y="174" fill="#7fb0ff">Biaya iklan</text>
+    <text class="lb" x="404" y="156" fill="#6ee7b7">Selisih</text>
+  </svg>
+</section>
+<main>
+  <div class="wrap">
+    <h2>Masuk</h2>
+    <p class="sub">Masukkan username dan password untuk membuka dashboard.</p>
+    <form id="f" novalidate>
+      <div class="f"><label for="u">Username</label><input id="u" name="username" type="text" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" required autofocus></div>
+      <div class="f"><label for="p">Password</label><input id="p" name="password" type="password" autocomplete="current-password" required><button type="button" class="tg" id="tg" aria-pressed="false">Tampilkan</button><p class="caps" id="caps">Caps Lock sedang aktif.</p></div>
+      <label class="rm"><input type="checkbox" id="r">Tetap masuk selama 30 hari</label>
+      <p class="msg" id="msg" role="alert"></p>
+      <button class="btn" id="btn" type="submit">Masuk</button>
+    </form>
+  </div>
+</main>
+<script>
+const $=s=>document.getElementById(s),f=$('f'),p=$('p'),msg=$('msg'),btn=$('btn');
+$('tg').onclick=e=>{const s=p.type==='password';p.type=s?'text':'password';e.target.textContent=s?'Sembunyikan':'Tampilkan';e.target.setAttribute('aria-pressed',s)};
+const cap=e=>{$('caps').style.display=e.getModifierState&&e.getModifierState('CapsLock')?'block':'none'};p.addEventListener('keydown',cap);p.addEventListener('keyup',cap);
+f.addEventListener('submit',async e=>{
+  e.preventDefault();msg.textContent='';
+  if(!$('u').value.trim()||!p.value){msg.textContent='Isi username dan password terlebih dulu.';return}
+  btn.disabled=true;btn.textContent='Memeriksa…';
+  try{
+    const r=await fetch('/login',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({u:$('u').value.trim(),p:p.value,r:$('r').checked})});
+    if(r.ok){btn.textContent='Berhasil, membuka dashboard…';location.replace('/');return}
+    msg.textContent='Username atau password salah. Periksa lagi, lalu coba masuk kembali.';
+    f.classList.remove('shake');void f.offsetWidth;f.classList.add('shake');p.select();
+  }catch(x){msg.textContent='Tidak bisa terhubung ke server. Periksa koneksi internet, lalu coba lagi.'}
+  btn.disabled=false;btn.textContent='Masuk';
+});
+</script>
+</body>
+</html>
